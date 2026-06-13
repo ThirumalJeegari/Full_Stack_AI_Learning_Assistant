@@ -1,177 +1,273 @@
-AI Agent Learning Assistant
+# 🎓 Full_Stack_AI_Learning_Assistant
 
-An AI-powered Learning Assistant built using Streamlit, FastAPI, and Supabase. This application provides authentication for Students and Faculty members with separate dashboards.
+An AI-powered Learning Management System built using **Streamlit**, **FastAPI**, and **Supabase**. The platform provides role-based authentication and separate dashboards for Students and Faculty.
 
-🚀 Features
+---
 
-User Signup
-User Login Authentication
-Role-Based Access (Student / Faculty)
-Browser Local Storage Session Management
-Separate Dashboards for Students and Faculty
-Backend API using FastAPI
-Database integration using Supabase
+## 🚀 Features
 
-🛠️ Tech Stack
-Frontend
-Streamlit
-Requests
-streamlit-local-storage
-Backend
-FastAPI
-Supabase Python SDK
-Database
-Supabase PostgreSQL Database
+✅ User Signup & Login  
+✅ Role-Based Access (Student / Faculty)  
+✅ Browser Local Storage Session Management  
+✅ Student Dashboard  
+✅ Faculty Dashboard  
+✅ FastAPI Backend APIs  
+✅ Supabase Database Integration  
+✅ Responsive Streamlit Interface  
 
-📂 Project Structure
-AI-Agent-Learning-Assistant/
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Streamlit
+- Requests
+- streamlit-local-storage
+
+### Backend
+- FastAPI
+- Uvicorn
+- Supabase Python SDK
+
+### Database
+- Supabase (PostgreSQL)
+
+---
+
+## 📁 Project Structure
+
+```bash
+LearnMate-AI/
 │
-├── app.py                    # Home Page
-├── database.py               # Supabase Connection
-├── main.py                   # FastAPI Backend APIs
+├── Backend/
+│   ├── main.py
+│   └── database.py
 │
-├── pages/
-│   ├── signup.py             # Signup Page
-│   ├── login.py              # Login Page
-│   ├── StudentDashboard.py   # Student Dashboard
-│   └── FacultyDashboard.py   # Faculty Dashboard
+├── Frontend/
+│   ├── app.py
+│   │
+│   └── pages/
+│       ├── signup.py
+│       ├── login.py
+│       ├── StudentDashboard.py
+│       └── FacultyDashboard.py
 │
-└── README.md
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
-⚙️ Installation
+---
 
-1. Clone the Repository
-git clone https://github.com/yourusername/AI-Agent-Learning-Assistant.git
+## ⚙️ Installation
 
-cd AI-Agent-Learning-Assistant
+### 1️⃣ Clone the Repository
 
-2. Create Virtual Environment
+```bash
+git clone https://github.com/your-username/LearnMate-AI.git
+
+cd LearnMate-AI
+```
+
+---
+
+### 2️⃣ Create Virtual Environment
+
+```bash
 python -m venv venv
+```
 
 Activate Environment:
 
-Windows
+**Windows**
 
+```bash
 venv\Scripts\activate
+```
 
-Linux/Mac
+**Linux/Mac**
 
+```bash
 source venv/bin/activate
+```
 
-3. Install Dependencies
+---
+
+### 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-If requirements.txt is not available:
+If you don't have a requirements file:
 
+```bash
 pip install streamlit fastapi uvicorn requests supabase streamlit-local-storage
-🔧 Configure Supabase
+```
 
-Open database.py and update your credentials:
+---
 
+## 🔧 Configure Supabase
+
+Update your Supabase credentials in `database.py`:
+
+```python
 SUPABASE_URL = "YOUR_SUPABASE_URL"
 SUPABASE_KEY = "YOUR_SUPABASE_KEY"
+```
 
-🗄️ Create Database Table
+---
 
-Create a table named users in Supabase with the following columns:
+## 🗄️ Database Schema
 
-Column Name	Data Type
-id	int
-name	text
-email	text
-password	text
-role	text
+Create a table named **users** with the following columns:
 
-▶️ Run Backend Server
+| Column | Type |
+|--------|------|
+| id | int |
+| name | text |
+| email | text |
+| password | text |
+| role | text |
 
-Start FastAPI server:
+---
 
+## ▶️ Run Backend Server
+
+Navigate to the Backend folder:
+
+```bash
+cd Backend
 uvicorn main:app --reload
+```
 
-Backend will run on:
+Server runs on:
 
+```bash
 http://127.0.0.1:8000
+```
 
-▶️ Run Frontend Application
+---
 
-Start Streamlit application:
+## ▶️ Run Frontend
 
+Navigate to the Frontend folder:
+
+```bash
+cd Frontend
 streamlit run app.py
+```
 
-Application will run on:
+Application runs on:
 
+```bash
 http://localhost:8501
+```
 
-🔐 API Endpoints
+---
 
-Signup API
+## 🔐 API Endpoints
+
+### Signup
+
+```http
 POST /signup
+```
 
-Request Body:
+Request:
 
+```json
 {
     "name": "John",
-    "email": "john@example.com",
+    "email": "john@gmail.com",
     "password": "1234",
     "role": "Student"
 }
+```
 
 Response:
 
+```json
 {
     "msg": "user data inserted successfully..."
 }
-Login API
+```
+
+---
+
+### Login
+
+```http
 POST /login
+```
 
-Request Body:
+Request:
 
+```json
 {
-    "email": "john@example.com",
+    "email": "john@gmail.com",
     "password": "1234",
     "role": "Student"
 }
+```
 
 Response:
 
+```json
 {
     "msg": [
         {
             "name": "John",
-            "email": "john@example.com",
+            "email": "john@gmail.com",
             "role": "Student"
         }
     ]
 }
+```
 
-👨‍🎓 User Roles
+---
 
-Student
-Access Student 
+## 🎯 User Roles
 
-Faculty
-Access Faculty Dashboard
+### 👨‍🎓 Student
+- Access Student Dashboard
 
-🔮 Future Enhancements
+### 👨‍🏫 Faculty
+- Access Faculty Dashboard
 
-Password Hashing using bcrypt
-JWT Authentication
-Logout Functionality
-AI Chatbot Integration
-Course Management System
-Assignment Uploads
-Attendance Tracking
-Learning Analytics Dashboard
+---
 
-📸 Screens
+## 🔮 Future Enhancements
 
-Home Page
-Signup Page
-Login Page
-Student Dashboard
-Faculty Dashboard
+- 🔐 JWT Authentication
+- 🔒 Password Hashing (bcrypt)
+- 🚪 Logout Functionality
+- 🤖 AI Chatbot Integration
+- 📚 Course Management
+- 📝 Assignment Upload
+- 📊 Learning Analytics
+- 🎯 Personalized Recommendations
+
+---
+
+## 📸 Screenshots
+
+- Home Page
+- Signup Page
+- Login Page
+- Student Dashboard
+- Faculty Dashboard
+
+> Add screenshots in a `/screenshots` folder and embed them here.
+
+---
+
+## 👨‍💻 Author
+
+**Thirumal Jeegari**
+
+- GitHub: `https://github.com/your-username`
+- LinkedIn: `https://linkedin.com/in/your-profile`
 
 
-👨‍💻 Author
-Thirumal Jeegari
 
