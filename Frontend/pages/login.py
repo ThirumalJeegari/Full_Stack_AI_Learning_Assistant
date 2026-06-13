@@ -32,6 +32,9 @@ with st.form("Login"):
             LoggedIn_mail = loggedIn_User["email"]
             LoggedIn_role = loggedIn_User["role"]
 
+            
+            st.session_state["role"] = LoggedIn_role
+            
             if LoggedIn_role == "Faculty":
                 st.switch_page("pages/FacultyDashboard.py")
             else :
