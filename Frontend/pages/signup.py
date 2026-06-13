@@ -3,7 +3,7 @@ import requests
 
 st.title("Signup")
 
-Backend_URL = "http://127.0.0.1:8000"
+Backend_URL = "https://full-stack-ai-learning-assistant.onrender.com"
 
 
 with st.form("Signup"):

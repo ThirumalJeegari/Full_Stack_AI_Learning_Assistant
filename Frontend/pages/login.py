@@ -6,7 +6,7 @@ localStoreage = LocalStorage()
 
 st.title("Login")
 
-Backend_URL = "http://127.0.0.1:8000"
+Backend_URL = "https://full-stack-ai-learning-assistant.onrender.com"
 
 with st.form("Login"):
     email = st.text_input("Email")
