@@ -266,8 +266,8 @@ Response:
 
 **Thirumal Jeegari**
 
-- GitHub: `https://github.com/your-username`
-- LinkedIn: `https://linkedin.com/in/your-profile`
+- GitHub: `[https://github.com/ThirumalJeegari](https://github.com/ThirumalJeegari)`
+- LinkedIn: `https://linkedin.com/in/thirumaljeegari`
 
 
 
