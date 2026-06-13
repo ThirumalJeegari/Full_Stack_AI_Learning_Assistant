@@ -5,6 +5,7 @@ st.title("Signup")
 
 Backend_URL = "http://127.0.0.1:8000"
 
+
 with st.form("Signup"):
     name = st.text_input("Name")
     email = st.text_input("Email")
