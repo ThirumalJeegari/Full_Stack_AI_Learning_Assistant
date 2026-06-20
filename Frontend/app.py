@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("AI_Learning_Assistant")
+st.title("AI Learning Assistant")
 
 if st.button("Signup"):
     st.switch_page("pages/signup.py")
